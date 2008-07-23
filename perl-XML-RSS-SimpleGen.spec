@@ -1,7 +1,7 @@
 %define module	XML-RSS-SimpleGen
 %define name	perl-%{module}
 %define version	11.11
-%define	release	%mkrel 4
+%define	release	%mkrel 6
 
 Name:		%{name}
 Version:	%{version}
