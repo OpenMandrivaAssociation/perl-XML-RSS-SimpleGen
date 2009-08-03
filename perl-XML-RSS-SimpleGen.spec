@@ -1,21 +1,20 @@
-%define module	XML-RSS-SimpleGen
-%define name	perl-%{module}
-%define version	11.11
-%define	release	%mkrel 6
+%define upstream_name	 XML-RSS-SimpleGen
+%define upstream_version 11.11
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Really Simple RSS Generator
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{module}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{module}/
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	perl-devel
-# actually, that's a "suggests", not a "requires"
-Requires:	perl(LWP::Simple)
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
+
+Suggests:	perl(LWP::Simple)
 
 %description
 An easy-to-use screen scraper and RSS generator module. It transparently
@@ -25,7 +24,7 @@ a written-out RSS file if the file content hasn't changed, and like
 automatically removing any HTML tags from content you might pass in.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -46,4 +45,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README
 %{perl_vendorlib}/XML/*
 %{_mandir}/*/*
-
