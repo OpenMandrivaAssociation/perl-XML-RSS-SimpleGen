@@ -2,14 +2,14 @@
 %define upstream_version 11.11
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	5
 
 Summary:	Really Simple RSS Generator
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/XML-RSS-SimpleGen
+Source0:	https://cpan.metacpan.org/authors/id/S/SB/SBURKE/XML-RSS-SimpleGen-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
