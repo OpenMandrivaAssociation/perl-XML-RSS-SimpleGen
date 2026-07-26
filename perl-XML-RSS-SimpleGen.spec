@@ -1,15 +1,13 @@
 %define upstream_name	 XML-RSS-SimpleGen
-%define upstream_version 11.11
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	11.11
+Release:	6
 
 Summary:	Really Simple RSS Generator
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/XML-RSS-SimpleGen
-Source0:	https://cpan.metacpan.org/authors/id/S/SB/SBURKE/XML-RSS-SimpleGen-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/S/SB/SBURKE/XML-RSS-SimpleGen-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -25,7 +23,7 @@ a written-out RSS file if the file content hasn't changed, and like
 automatically removing any HTML tags from content you might pass in.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -46,9 +44,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %changelog
 * Mon Aug 03 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 11.110.0-1mdv2010.0
 + Revision: 408255
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 11.11-6mdv2009.0
+- rebuild using %11.11 Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 11.11-6mdv2009.0
 + Revision: 242269
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
