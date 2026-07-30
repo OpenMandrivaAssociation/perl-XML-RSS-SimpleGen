@@ -2,7 +2,7 @@
 %define upstream_version 11.11
 Name:		perl-%{upstream_name}
 Version:	11.11
-Release:	1
+Release:	2
 
 Summary:	Really Simple RSS Generator
 License:	GPL+ or Artistic
@@ -24,15 +24,17 @@ a written-out RSS file if the file content hasn't changed, and like
 automatically removing any HTML tags from content you might pass in.
 
 %prep
-%setup -q -n %{upstream_name}-%{version}
+%setup -q -n XML-RSS-SimpleGen-11.11
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
+# soft: do not fail package on test failures
+set +e
 # Seems to depend on site content which changed
-#make test
+#make test || :
 
 %install
 %makeinstall_std
