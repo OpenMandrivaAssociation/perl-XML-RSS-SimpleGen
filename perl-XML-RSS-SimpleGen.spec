@@ -2,7 +2,7 @@
 %define upstream_version 11.11
 Name:		perl-%{upstream_name}
 Version:	11.11
-Release:	2
+Release:	3
 
 Summary:	Really Simple RSS Generator
 License:	GPL+ or Artistic
